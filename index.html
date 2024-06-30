@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>act</title>
+  <style>
+    p {
+      font-size: 8px;
+      font-weight: bold;
+      color: blue;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid rgb(0, 0, 0);
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 200px;
+      box-shadow: 10px 10px #333;
+
+    }
+    #styleButton {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 35px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.5s ease, transform 0.3s ease;
+      transform-origin: center;
+    }
+
+    #styleButton:hover {
+      background-color: #333;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p id="myPara">This is some text</p>
+
+    <button id="styleButton">Can't Read This?</button>
+  </div>
+  <script>
+    var button = document.getElementById("styleButton");
+    document.getElementById("styleButton").addEventListener("click", function() {
+      var paraStyle = window.getComputedStyle(document.getElementById("myPara"));
+      document.getElementById("myPara").style.fontSize = "50px";
+      document.getElementById("myPara").style.color = "orange";
+      document.getElementById("myPara").style.fontFamily = "Lucida Sans";
+      button.textContent = "Now You Can!";
+
+
+
+    });
+  </script>
+</body>
+</html>
